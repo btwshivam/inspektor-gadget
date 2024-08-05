@@ -36,8 +36,8 @@ type snapshotSocketEntry struct {
 	InodeNumber uint64 `json:"ino"`
 
 	SrcEndpoint utils.L4Endpoint `json:"src"`
-	DstEndpoint utils.L4Endpoint `json:"dst"`
-	Status      string           `json:"status"`
+	DstEndpoint utils.L4Endpoint `json:"dito"`
+	Status      uint64           `json:"status"`
 }
 
 func TestSnapshotSocket(t *testing.T) {
@@ -90,13 +90,14 @@ func TestSnapshotSocket(t *testing.T) {
 					Addr:    "0.0.0.0",
 					Version: 4,
 					Port:    9090,
+					Proto: 6,
 				},
 				DstEndpoint: utils.L4Endpoint{
 					Addr:    "0.0.0.0",
 					Version: 4,
 					Port:    0,
 				},
-				Status:      "LISTEN",
+				Status:      10,
 				NetNsID:     utils.NormalizedInt,
 				InodeNumber: utils.NormalizedInt,
 			}
