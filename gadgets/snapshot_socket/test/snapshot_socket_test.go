@@ -36,7 +36,7 @@ type snapshotSocketEntry struct {
 	InodeNumber uint64 `json:"ino"`
 
 	SrcEndpoint utils.L4Endpoint `json:"src"`
-	DstEndpoint utils.L4Endpoint `json:"dito"`
+	DstEndpoint utils.L4Endpoint `json:"dst"`
 	Status      uint64           `json:"status"`
 }
 
